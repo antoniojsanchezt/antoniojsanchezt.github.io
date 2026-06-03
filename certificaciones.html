@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Certificaciones — Antonio Sánchez</title>
+<meta name="description" content="Certificaciones de Antonio Sánchez, con verificación pública." />
+<meta name="theme-color" content="#0c0d11" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230c0d11'/><text x='50' y='70' font-size='56' font-family='Arial' font-weight='bold' fill='%237cf2c4' text-anchor='middle'>AS</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0b0c0f;--panel:#13161d;--panel-2:#171b23;
+    --line:rgba(255,255,255,.08);--line-strong:rgba(255,255,255,.14);
+    --text:#ECEAE3;--muted:#9aa1b0;--muted-2:#6b6f7c;
+    --accent:#7cf2c4;--accent-2:#5fd6ff;
+    --maxw:1100px;--ease:cubic-bezier(.22,.7,.2,1);
+    --font-display:"Bricolage Grotesque",sans-serif;--font-body:"Hanken Grotesk",sans-serif;--font-mono:"JetBrains Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(1000px 520px at 80% -12%,rgba(124,242,196,.12),transparent 60%),radial-gradient(820px 600px at 6% 10%,rgba(95,214,255,.08),transparent 55%),var(--ink)}
+  body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.4;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:62px 62px;-webkit-mask-image:radial-gradient(ellipse 110% 70% at 50% 0%,#000 26%,transparent 76%);mask-image:radial-gradient(ellipse 110% 70% at 50% 0%,#000 26%,transparent 76%)}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#06231a}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(11,12,15,.6);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;letter-spacing:-.01em}
+  .monogram{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--accent);border-radius:10px;color:var(--accent);font-size:.95rem;transition:background .25s,color .25s}
+  .brand:hover .monogram{background:var(--accent);color:#06231a}
+  .lang-toggle{display:inline-flex;border:1px solid var(--line-strong);border-radius:999px;overflow:hidden}
+  .lang-toggle button{background:none;border:none;color:var(--muted);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;padding:8px 12px;cursor:pointer;transition:background .2s,color .2s}
+  .lang-toggle button.on{background:var(--accent);color:#06231a}
+  .lang-toggle button:not(.on):hover{color:var(--text)}
+  .hero{padding:64px 0 40px}
+  .back{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;color:var(--muted);margin-bottom:26px;transition:color .2s}
+  .back:hover{color:var(--accent)}
+  .eyebrow{font-family:var(--font-mono);font-size:.73rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:11px;margin-bottom:16px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
+  h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.4rem,6vw,3.8rem);letter-spacing:-.03em;line-height:1}
+  .sub{color:var(--muted);margin-top:14px;max-width:54ch;font-size:1.05rem}
+  .count{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-family:var(--font-mono);font-size:.8rem;color:var(--muted);border:1px solid var(--line-strong);padding:8px 15px;border-radius:999px}
+  .count b{color:var(--accent)}
+  main{padding:30px 0 90px}
+  .cgroup{margin-bottom:46px}
+  .cgroup-title{font-family:var(--font-mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .ccard{background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:7px;transition:border-color .25s,transform .25s}
+  .ccard:hover{border-color:rgba(124,242,196,.4);transform:translateY(-4px)}
+  .cname{font-family:var(--font-display);font-weight:600;font-size:1.06rem;line-height:1.25}
+  .cmeta{color:var(--muted);font-size:.84rem}
+  .cverify{margin-top:9px;align-self:flex-start;font-family:var(--font-mono);font-size:.73rem;letter-spacing:.05em;color:var(--accent);border:1px solid var(--line-strong);padding:7px 13px;border-radius:9px;transition:background .2s,color .2s,border-color .2s}
+  .cverify:hover{background:var(--accent);color:#06231a;border-color:var(--accent)}
+  .nolink{margin-top:9px;align-self:flex-start;font-family:var(--font-mono);font-size:.7rem;color:var(--muted-2);border:1px dashed var(--line-strong);padding:6px 11px;border-radius:9px}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted-2);font-size:.85rem}
+  .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+  .foot-in a{color:var(--muted);transition:color .2s}
+  .foot-in a:hover{color:var(--accent)}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand" aria-label="Antonio Sánchez"><span class="monogram" aria-hidden="true">AS</span> Antonio Sánchez</a>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button type="button" id="lang-es" aria-label="Español">ES</button>
+      <button type="button" id="lang-en" aria-label="English">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back" data-t="back">← Volver al portfolio</a>
+    <p class="eyebrow" data-t="eyebrow">Credenciales</p>
+    <h1 data-t="title">Certificaciones</h1>
+    <p class="sub" data-t="sub">Todas mis certificaciones, con verificación pública.</p>
+    <span class="count"><b id="count">0</b> <span data-t="count">certificaciones verificables</span></span>
+  </div>
+</section>
+
+<main>
+  <div class="wrap" id="cert-sections"></div>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>© <span id="yr"></span> Antonio Sánchez · Buenos Aires, AR</span>
+    <a href="index.html" data-t="back2">← Portfolio</a>
+  </div>
+</footer>
+
+<script>
+  /* ====== DATA: agregar nuevas certis acá (una línea por certi) ======
+     n = nombre · i = emisor · y = año (opcional) · c = categoría · u = link (opcional)
+     categorías: sec | ai | data | lead | mgmt | other                                  */
+  var CERTS = [
+    { n:"Google Cybersecurity Professional Certificate", i:"Google", y:"", c:"sec",  u:"https://www.credly.com/badges/8b85accb-6f91-4c8d-9283-4c4cd3f222e2/public_url" },
+    { n:"Curso de n8n",                                   i:"Platzi", y:"2025", c:"ai",   u:"https://platzi.com/p/antonio.sanchez668/curso/12028-n8n/diploma/detalle/" },
+    { n:"Curso de Bases de Datos con SQL",                i:"Platzi", y:"", c:"data", u:"https://platzi.com/p/antonio.sanchez668/curso/11324-dbsql/diploma/detalle/" },
+    { n:"Curso de PostgreSQL",                            i:"Platzi", y:"", c:"data", u:"https://platzi.com/p/antonio.sanchez668/curso/12074-course/diploma/detalle/" }
+  ];
+
+  var CATS = [
+    { k:"sec",   es:"Ciberseguridad",          en:"Cybersecurity" },
+    { k:"ai",    es:"IA & Automatización",      en:"AI & Automation" },
+    { k:"data",  es:"Datos & Bases de datos",   en:"Data & Databases" },
+    { k:"lead",  es:"Liderazgo",                en:"Leadership" },
+    { k:"mgmt",  es:"Gestión & Proyectos",      en:"Management & Projects" },
+    { k:"other", es:"Otras",                    en:"Other" }
+  ];
+
+  var T = {
+    es:{ back:"← Volver al portfolio", back2:"← Portfolio", eyebrow:"Credenciales", title:"Certificaciones",
+         sub:"Todas mis certificaciones, con verificación pública.", verify:"Ver certificado", count:"certificaciones verificables" },
+    en:{ back:"← Back to portfolio", back2:"← Portfolio", eyebrow:"Credentials", title:"Certifications",
+         sub:"All my certifications, with public verification.", verify:"View credential", count:"verifiable certifications" }
+  };
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lang;
+  try { lang = localStorage.getItem('lang'); } catch(e){}
+  if(!lang){ lang = (navigator.language||'es').toLowerCase().indexOf('en')===0 ? 'en' : 'es'; }
+
+  function render(){
+    var t = T[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-t]').forEach(function(el){ var k=el.dataset.t; if(t[k]!=null) el.textContent=t[k]; });
+    document.getElementById('count').textContent = CERTS.length;
+    var box = document.getElementById('cert-sections'); box.innerHTML='';
+    CATS.forEach(function(cat){
+      var items = CERTS.filter(function(c){ return c.c===cat.k; });
+      if(!items.length) return;
+      var sec = document.createElement('div'); sec.className='cgroup reveal';
+      var h = document.createElement('div'); h.className='cgroup-title'; h.textContent='// '+cat[lang]; sec.appendChild(h);
+      var grid = document.createElement('div'); grid.className='cgrid';
+      items.forEach(function(c){
+        var card = document.createElement('div'); card.className='ccard';
+        var meta = c.i + (c.y ? ' · '+c.y : '');
+        var verify = c.u
+          ? '<a class="cverify" href="'+c.u+'" target="_blank" rel="noopener">'+t.verify+' ↗</a>'
+          : '<span class="nolink">'+(lang==='en'?'No link':'Sin enlace')+'</span>';
+        card.innerHTML = '<div class="cname"></div><div class="cmeta"></div>'+verify;
+        card.querySelector('.cname').textContent = c.n;
+        card.querySelector('.cmeta').textContent = meta;
+        grid.appendChild(card);
+      });
+      sec.appendChild(grid); box.appendChild(sec);
+    });
+    document.getElementById('lang-es').classList.toggle('on', lang==='es');
+    document.getElementById('lang-en').classList.toggle('on', lang==='en');
+    // reveal
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(function(el,i){ if(reduce){el.classList.add('in');return;} el.style.transitionDelay=(Math.min(i,6)*60)+'ms'; io.observe(el); });
+  }
+  function setLang(l){ lang=l; try{ localStorage.setItem('lang', l); }catch(e){} render(); }
+  document.getElementById('lang-es').addEventListener('click', function(){ setLang('es'); });
+  document.getElementById('lang-en').addEventListener('click', function(){ setLang('en'); });
+  render();
+</script>
+</body>
+</html>
