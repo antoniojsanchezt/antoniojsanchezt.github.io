@@ -102,11 +102,50 @@
   /* ====== DATA: agregar nuevas certis acá (una línea por certi) ======
      n = nombre · i = emisor · y = año (opcional) · c = categoría · u = link (opcional)
      categorías: sec | ai | data | lead | mgmt | other                                  */
+  var LI = "https://www.linkedin.com/in/antoniojsanchezt/details/certifications/";
   var CERTS = [
-    { n:"Google Cybersecurity Professional Certificate", i:"Google", y:"", c:"sec",  u:"https://www.credly.com/badges/8b85accb-6f91-4c8d-9283-4c4cd3f222e2/public_url" },
-    { n:"Curso de n8n",                                   i:"Platzi", y:"2025", c:"ai",   u:"https://platzi.com/p/antonio.sanchez668/curso/12028-n8n/diploma/detalle/" },
-    { n:"Curso de Bases de Datos con SQL",                i:"Platzi", y:"", c:"data", u:"https://platzi.com/p/antonio.sanchez668/curso/11324-dbsql/diploma/detalle/" },
-    { n:"Curso de PostgreSQL",                            i:"Platzi", y:"", c:"data", u:"https://platzi.com/p/antonio.sanchez668/curso/12074-course/diploma/detalle/" }
+    // Ciberseguridad
+    { n:"Google Cybersecurity Specialization", i:"Coursera · Google", y:"2023", c:"sec", u:"https://www.coursera.org/account/accomplishments/specialization/certificate/D28S4Y9V5XMG" },
+    { n:"Google Cybersecurity Certificate", i:"Coursera · Google", y:"2023", c:"sec", u:"https://www.credly.com/badges/8b85accb-6f91-4c8d-9283-4c4cd3f222e2/public_url" },
+    { n:"Foundations of Cybersecurity", i:"Coursera · Google", y:"2023", c:"sec", u:"https://www.coursera.org/account/accomplishments/certificate/H6MZAZTPCXFK" },
+    { n:"Play It Safe: Manage Security Risks", i:"Coursera · Google", y:"2023", c:"sec", u:"https://www.coursera.org/account/accomplishments/certificate/8V937CZGC57F" },
+    { n:"Connect and Protect: Networks and Network Security", i:"Coursera · Google", y:"2023", c:"sec", u:"https://www.coursera.org/account/accomplishments/certificate/4AKVUG98Z33P" },
+    { n:"Tools of the Trade: Linux and SQL", i:"Coursera · Google", y:"2023", c:"sec", u:"https://www.coursera.org/account/accomplishments/certificate/S8RF723A2RY7" },
+    { n:"Assets, Threats, and Vulnerabilities", i:"Coursera · Google", y:"2023", c:"sec", u:"https://www.coursera.org/account/accomplishments/certificate/9E6UFUKT982Q" },
+    { n:"Sound the Alarm: Detection and Response", i:"Coursera · Google", y:"2023", c:"sec", u:"https://www.coursera.org/account/accomplishments/certificate/Z7S4B5ELRR54" },
+    { n:"Automate Cybersecurity Tasks with Python", i:"Coursera · Google", y:"2023", c:"sec", u:"https://www.coursera.org/account/accomplishments/certificate/6U5UA7JGDLV2" },
+    { n:"Protege tu Negocio: Ciberseguridad en el Teletrabajo", i:"Google", y:"2023", c:"sec", u:"https://learndigital.withgoogle.com/link/1nur091p2ww" },
+    { n:"Become an IT Security Specialist", i:"LinkedIn Learning", y:"2022", c:"sec", u:LI },
+    { n:"Securing Containers and Kubernetes Ecosystem", i:"LinkedIn Learning", y:"2022", c:"sec", u:LI },
+    { n:"Artificial Intelligence for Cybersecurity", i:"LinkedIn Learning", y:"2022", c:"sec", u:LI },
+    { n:"Learning Threat Modeling for Security Professionals", i:"LinkedIn Learning", y:"2022", c:"sec", u:LI },
+    { n:"Learning Vulnerability Management", i:"LinkedIn Learning", y:"2022", c:"sec", u:LI },
+    { n:"Learning Computer Forensics", i:"LinkedIn Learning", y:"2022", c:"sec", u:LI },
+    { n:"Cybersecurity with Cloud Computing", i:"LinkedIn Learning", y:"2021", c:"sec", u:LI },
+    { n:"Learning SSL/TLS", i:"LinkedIn Learning", y:"2021", c:"sec", u:LI },
+    { n:"Cybersecurity Foundations", i:"LinkedIn Learning", y:"2021", c:"sec", u:LI },
+    { n:"IT Security Foundations: Core Concepts", i:"LinkedIn Learning", y:"2021", c:"sec", u:LI },
+    // IA & Automatización
+    { n:"Curso de n8n", i:"Platzi", y:"2025", c:"ai", u:"https://platzi.com/p/antonio.sanchez668/curso/12028-n8n/diploma/detalle/" },
+    // Datos & Bases de datos
+    { n:"Curso de Bases de Datos con SQL", i:"Platzi", y:"2025", c:"data", u:"https://platzi.com/p/antonio.sanchez668/curso/11324-dbsql/diploma/detalle/" },
+    { n:"Curso de PostgreSQL", i:"Platzi", y:"2025", c:"data", u:"https://platzi.com/p/antonio.sanchez668/curso/12074-course/diploma/detalle/" },
+    { n:"Aprende Power BI", i:"LinkedIn Learning", y:"2021", c:"data", u:LI },
+    { n:"Excel: Tablas dinámicas (365/2019)", i:"LinkedIn Learning", y:"2021", c:"data", u:LI },
+    // Liderazgo
+    { n:"Habilidades de coaching para líderes y gerentes", i:"LinkedIn Learning", y:"2022", c:"lead", u:LI },
+    { n:"Cómo liderar sin autoridad formal", i:"LinkedIn Learning", y:"2022", c:"lead", u:LI },
+    { n:"Cómo liderar con eficacia", i:"LinkedIn Learning", y:"2022", c:"lead", u:LI },
+    { n:"Pensamiento estratégico", i:"LinkedIn Learning", y:"2022", c:"lead", u:LI },
+    { n:"Inteligencia emocional en la gestión empresarial", i:"LinkedIn Learning", y:"2021", c:"lead", u:LI },
+    // Gestión & Proyectos
+    { n:"Fundamentos de la arquitectura de equipos IT", i:"LinkedIn Learning", y:"2022", c:"mgmt", u:LI },
+    { n:"Gestión de equipos IT con un café", i:"LinkedIn Learning", y:"2022", c:"mgmt", u:LI },
+    { n:"Project: Gestión de proyectos ágiles", i:"LinkedIn Learning", y:"2021", c:"mgmt", u:LI },
+    // Otras
+    { n:"Inglés de negocios: Dominar la entrevista en línea", i:"LinkedIn Learning", y:"2022", c:"other", u:LI },
+    { n:"Fundamentos de la tecnología blockchain", i:"LinkedIn Learning", y:"2022", c:"other", u:LI },
+    { n:"Fundamentos del soporte técnico: Telecomunicaciones", i:"LinkedIn Learning", y:"2021", c:"other", u:LI }
   ];
 
   var CATS = [
