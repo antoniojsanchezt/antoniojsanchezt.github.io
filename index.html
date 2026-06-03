@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Antonio Sánchez — Coordinador de IT Business Partners</title>
+<meta name="description" content="Antonio Sánchez · Coordinador de IT Business Partners. Lidero equipos que alinean la tecnología con los objetivos del negocio. Gestión de proyectos, Agile y automatización." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0c0d11;
+    --ink-2:#10131a;
+    --panel:#14171f;
+    --panel-2:#181c25;
+    --line:rgba(255,255,255,.08);
+    --text:#ECE9E1;
+    --muted:#8b8f9c;
+    --muted-2:#676b78;
+    --accent:#7cf2c4;
+    --accent-deep:#26c79a;
+    --blue:#5b8cff;
+    --radius:16px;
+    --maxw:1120px;
+    --font-display:"Bricolage Grotesque",sans-serif;
+    --font-body:"Hanken Grotesk",sans-serif;
+    --font-mono:"JetBrains Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* atmospheric background */
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(900px 500px at 78% -10%, rgba(124,242,196,.10), transparent 60%),
+      radial-gradient(800px 600px at 8% 12%, rgba(91,140,255,.08), transparent 55%),
+      var(--ink);
+  }
+  body::after{
+    content:"";
+    position:fixed;inset:0;z-index:-1;opacity:.5;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
+            mask-image:radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .mono{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  section{padding:96px 0;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
+  h2.title{font-family:var(--font-display);font-weight:800;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:14px}
+  .lead{color:var(--muted);max-width:62ch}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(12,13,17,.62);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;letter-spacing:-.01em}
+  .monogram{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--accent);border-radius:9px;color:var(--accent);font-size:.95rem}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:.92rem;color:var(--muted);position:relative;transition:color .25s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--accent);transition:width .3s}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--text);border:1px solid var(--line);padding:7px 14px;border-radius:999px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(124,242,196,.6);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(124,242,196,.5)}70%{box-shadow:0 0 0 9px rgba(124,242,196,0)}100%{box-shadow:0 0 0 0 rgba(124,242,196,0)}}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:78px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1.55fr .9fr;gap:48px;align-items:center}
+  .hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.6rem,6.4vw,4.7rem);line-height:.98;letter-spacing:-.03em}
+  .hero h1 .accent{color:var(--accent)}
+  .role{font-family:var(--font-mono);font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:20px 0 18px;display:flex;align-items:center;gap:12px}
+  .role .bar{height:1px;width:40px;background:var(--muted-2)}
+  .hero p.pitch{font-size:1.22rem;color:var(--text);max-width:46ch;margin-bottom:14px}
+  .hero p.sub{color:var(--muted);max-width:48ch;margin-bottom:30px}
+  .cta{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.96rem;padding:13px 22px;border-radius:11px;border:1px solid var(--line);transition:transform .2s,border-color .25s,background .25s,color .25s}
+  .btn svg{width:17px;height:17px}
+  .btn.primary{background:var(--accent);color:#06231a;border-color:var(--accent)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px -14px rgba(124,242,196,.7)}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  /* spec card */
+  .spec{background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-radius:var(--radius);padding:26px;position:relative;overflow:hidden}
+  .spec::before{content:"⬡";position:absolute;right:-14px;top:-22px;font-size:120px;color:rgba(124,242,196,.06);font-family:var(--font-display)}
+  .spec h3{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  .spec dl{display:grid;gap:14px}
+  .spec .row{display:flex;justify-content:space-between;gap:16px;padding-bottom:13px;border-bottom:1px dashed var(--line)}
+  .spec .row:last-child{border-bottom:none;padding-bottom:0}
+  .spec dt{color:var(--muted);font-size:.86rem}
+  .spec dd{text-align:right;font-weight:600;font-size:.92rem}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:34px}.spec{order:2}}
+
+  /* STATS */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.012)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:38px 26px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat .num{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-.02em;color:var(--text)}
+  .stat .num em{color:var(--accent);font-style:normal}
+  .stat .lbl{color:var(--muted);font-size:.86rem;margin-top:4px}
+  @media(max-width:760px){.stats .wrap{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px}
+  .about-grid p{margin-bottom:16px;color:#cfd0d6}
+  .about-grid p strong{color:var(--text);font-weight:600}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:20px}}
+
+  /* TIMELINE */
+  .tl{display:grid;gap:0;margin-top:14px}
+  .job{display:grid;grid-template-columns:200px 1fr;gap:30px;padding:30px 0;border-top:1px solid var(--line);position:relative}
+  .job:hover{background:linear-gradient(90deg,rgba(124,242,196,.04),transparent 40%)}
+  .job .when{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);letter-spacing:.05em}
+  .job .where{color:var(--muted);font-size:.88rem;margin-top:6px}
+  .job h3{font-family:var(--font-display);font-weight:600;font-size:1.32rem;letter-spacing:-.01em;margin-bottom:10px}
+  .job .now{display:inline-block;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#06231a;background:var(--accent);padding:3px 8px;border-radius:6px;margin-left:10px;vertical-align:middle}
+  .job ul{list-style:none;display:grid;gap:8px}
+  .job li{position:relative;padding-left:22px;color:#c6c8cf;font-size:.97rem}
+  .job li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
+  @media(max-width:760px){.job{grid-template-columns:1fr;gap:12px}}
+
+  /* PROJECTS */
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+  .card:hover{transform:translateY(-5px);border-color:rgba(124,242,196,.4)}
+  .card .idx{font-family:var(--font-mono);font-size:.72rem;color:var(--accent);letter-spacing:.12em}
+  .card h3{font-family:var(--font-display);font-weight:600;font-size:1.28rem;margin:12px 0 14px;letter-spacing:-.01em;line-height:1.15}
+  .card .block{margin-bottom:13px}
+  .card .block .k{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);display:block;margin-bottom:3px}
+  .card .block p{font-size:.92rem;color:#c6c8cf}
+  .card .tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;padding-top:16px}
+  .tag{font-family:var(--font-mono);font-size:.68rem;color:var(--muted);border:1px solid var(--line);padding:4px 9px;border-radius:7px}
+  @media(max-width:900px){.proj-grid{grid-template-columns:1fr}}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:30px;margin-top:8px}
+  .skillset h4{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{font-size:.9rem;padding:9px 15px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02);transition:border-color .2s,color .2s,transform .2s}
+  .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  @media(max-width:760px){.skills-grid{grid-template-columns:1fr;gap:22px}}
+
+  /* CERTS + EDU */
+  .two{display:grid;grid-template-columns:1.2fr .8fr;gap:48px}
+  .cert{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
+  .cert .mk{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--line);color:var(--accent);font-family:var(--font-mono);font-size:.7rem;flex:0 0 auto}
+  .cert .name{font-weight:600}
+  .cert .org{color:var(--muted);font-size:.86rem}
+  .cert-more{margin-top:18px;font-family:var(--font-mono);font-size:.8rem;color:var(--muted)}
+  .edu-card{background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .edu-card .deg{font-family:var(--font-display);font-weight:600;font-size:1.18rem;margin-bottom:8px}
+  .edu-card .inst{color:var(--muted);font-size:.92rem}
+  .edu-card .yr{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);margin-top:12px}
+  @media(max-width:860px){.two{grid-template-columns:1fr;gap:30px}}
+
+  /* CONTACT */
+  .contact{text-align:center;padding:110px 0 90px}
+  .contact h2{font-family:var(--font-display);font-weight:800;font-size:clamp(2.2rem,5.5vw,3.8rem);letter-spacing:-.03em;line-height:1.02;margin:18px 0 22px}
+  .contact h2 .accent{color:var(--accent)}
+  .contact .cta{justify-content:center}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted-2);font-size:.85rem}
+  .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+  .foot-in .mono{color:var(--muted-2)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.dot{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand"><span class="monogram">AS</span> Antonio Sánchez</a>
+    <nav class="nav-links">
+      <a href="#about">Perfil</a>
+      <a href="#exp">Experiencia</a>
+      <a href="#work">Proyectos</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+    <span class="status"><span class="dot"></span> Abierto a oportunidades</span>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="role reveal"><span class="bar"></span> Coordinador de IT Business Partners</div>
+        <h1 class="reveal">Tecnología<br>con <span class="accent">propósito</span><br>de negocio.</h1>
+        <p class="pitch reveal" style="margin-top:26px">Lidero equipos que alinean la tecnología con los objetivos del negocio.</p>
+        <p class="sub reveal">Gestión de proyectos de software, metodologías ágiles y automatización de procesos. Hago de puente entre lo técnico y lo estratégico.</p>
+        <div class="cta reveal">
+          <a class="btn primary" href="mailto:antoniojsanchezt@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
+            Escribime
+          </a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/antoniojsanchezt" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H17.6v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <aside class="spec reveal">
+        <h3>// Ficha rápida</h3>
+        <dl>
+          <div class="row"><dt>Ubicación</dt><dd>Buenos Aires, AR</dd></div>
+          <div class="row"><dt>Modalidad</dt><dd>Presencial · Híbrido · Remoto</dd></div>
+          <div class="row"><dt>Foco</dt><dd>Liderazgo IT · Proyectos</dd></div>
+          <div class="row"><dt>Metodologías</dt><dd>Agile · Scrum</dd></div>
+          <div class="row"><dt>Idiomas</dt><dd>Español (nativo)</dd></div>
+          <div class="row"><dt>Estado</dt><dd style="color:var(--accent)">Disponible</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats reveal">
+    <div class="wrap">
+      <div class="stat"><div class="num">+<em>4</em></div><div class="lbl">años en IT Business Partnering</div></div>
+      <div class="stat"><div class="num"><em>Jira</em></div><div class="lbl">proyecto estratégico multi-épica</div></div>
+      <div class="stat"><div class="num"><em>37</em></div><div class="lbl">certificaciones profesionales</div></div>
+      <div class="stat"><div class="num"><em>2</em></div><div class="lbl">personas a cargo (equipo ITBP)</div></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <div class="eyebrow"><span class="mono">Perfil</span></div>
+          <h2 class="title reveal">El nexo entre<br>negocio y tecnología</h2>
+        </div>
+        <div class="reveal">
+          <p>Coordino el equipo de <strong>IT Business Partners</strong> en Social Learning, liderando la relación entre las áreas de negocio y los equipos técnicos para que la tecnología impulse resultados concretos.</p>
+          <p>En más de <strong>4 años</strong> en la compañía crecí de IT Business Partner a coordinar el equipo. Gestiono proyectos de software de punta a punta: desde relevar la necesidad del negocio y traducirla en requerimientos (casos de uso, historias de usuario) hasta la adopción de las soluciones por parte de los usuarios.</p>
+          <p>Lo que me mueve es <strong>ordenar la complejidad</strong>: alinear prioridades, destrabar la comunicación entre perfiles técnicos y no técnicos, y convertir ideas dispersas en proyectos con dueño, plazo y resultado.</p>
+          <p>Mi base es la <strong>Ingeniería en Computer Science</strong>, sumada a experiencia en capacitación técnica y gestión, lo que me da espalda tanto para lo técnico como para lo humano.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="exp">
+    <div class="wrap">
+      <div class="eyebrow"><span class="mono">Trayectoria</span></div>
+      <h2 class="title reveal">Experiencia</h2>
+      <div class="tl">
+        <div class="job reveal">
+          <div>
+            <div class="when">Feb 2026 — Presente</div>
+            <div class="where">Social Learning · Remoto</div>
+          </div>
+          <div>
+            <h3>Coordinador de IT Business Partners <span class="now">Actual</span></h3>
+            <ul>
+              <li>Lidero y coordino el equipo de IT Business Partners, articulando las necesidades del negocio con los equipos técnicos.</li>
+              <li>Coordino la cartera de proyectos de software: priorización, seguimiento y entrega.</li>
+              <li>Defino estándares de trabajo del equipo, mejorando la previsibilidad de las entregas.</li>
+              <li>Impulso mejoras de procesos y la adopción de nuevas herramientas en toda la organización.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job reveal">
+          <div>
+            <div class="when">Dic 2021 — Feb 2026</div>
+            <div class="where">Social Learning · Remoto</div>
+          </div>
+          <div>
+            <h3>IT Business Partner</h3>
+            <ul>
+              <li>Fui el nexo entre las áreas de negocio y el equipo técnico, asegurando que las mejoras de sistemas respondieran a necesidades reales.</li>
+              <li>Relevé, documenté y canalicé nuevos requerimientos (casos de uso, historias de usuario) hacia desarrollo.</li>
+              <li>Impulsé la implementación de mejoras de sistemas y la adopción de nuevas herramientas y procesos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job reveal">
+          <div>
+            <div class="when">Feb 2020 — Dic 2021</div>
+            <div class="where">Teclab · Instituto Técnico Superior</div>
+          </div>
+          <div>
+            <h3>Tutor Académico de Redes</h3>
+            <ul>
+              <li>Acompañé a estudiantes en su formación en redes y tecnología.</li>
+              <li>Facilité el aprendizaje, brindé retroalimentación y soporte técnico personalizado.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job reveal">
+          <div>
+            <div class="when">Mar 2015 — Dic 2017</div>
+            <div class="where">Shopcell · Agente Autorizado Movistar</div>
+          </div>
+          <div>
+            <h3>Administrador</h3>
+            <ul>
+              <li>Gestioné la operación administrativa del punto de venta: cuentas, inventario y atención al cliente.</li>
+              <li>Manejo de cuentas e inventario con apoyo en SAP.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="work">
+    <div class="wrap">
+      <div class="eyebrow"><span class="mono">Casos · editá con tus datos</span></div>
+      <h2 class="title reveal">Proyectos destacados</h2>
+      <p class="lead reveal" style="margin-bottom:34px">Tres casos que muestran cómo trabajo: problema → enfoque → resultado. <strong style="color:var(--text)">Reemplazá los textos entre [corchetes]</strong> con tus números reales.</p>
+      <div class="proj-grid">
+        <article class="card reveal">
+          <span class="idx">01</span>
+          <h3>Proyecto estratégico multi-épica en Jira</h3>
+          <div class="block"><span class="k">Problema</span><p>Un proyecto grande, con múltiples épicas y frentes corriendo en paralelo, que había que ordenar y entregar.</p></div>
+          <div class="block"><span class="k">Enfoque</span><p>Gestiono y ejecuto épicas de punta a punta en Jira: relevamiento, especificación, seguimiento y entrega, coordinando prioridades con el equipo técnico.</p></div>
+          <div class="block"><span class="k">Resultado</span><p>Múltiples épicas finalizadas, varias lideradas por mí de principio a fin. [Agregá el N.º aprox. de épicas.]</p></div>
+          <div class="tags"><span class="tag">Jira</span><span class="tag">Agile</span><span class="tag">Gestión de proyectos</span></div>
+        </article>
+
+        <article class="card reveal">
+          <span class="idx">02</span>
+          <h3>Relevamiento y mejora de procesos</h3>
+          <div class="block"><span class="k">Problema</span><p>Requerimientos que llegaban a desarrollo incompletos o ambiguos, generando retrabajo.</p></div>
+          <div class="block"><span class="k">Enfoque</span><p>Estandaricé el relevamiento con casos de uso, historias de usuario y criterios de aceptación claros.</p></div>
+          <div class="block"><span class="k">Resultado</span><p>Requerimientos más claros desde el día uno y menos idas y vueltas con desarrollo.</p></div>
+          <div class="tags"><span class="tag">Requerimientos</span><span class="tag">BPM</span><span class="tag">Calidad</span></div>
+        </article>
+
+        <article class="card reveal">
+          <span class="idx">03</span>
+          <h3>Coordinación del equipo ITBP</h3>
+          <div class="block"><span class="k">Problema</span><p>El equipo necesitaba prioridades ordenadas y una comunicación más fluida entre negocio y desarrollo.</p></div>
+          <div class="block"><span class="k">Enfoque</span><p>Como coordinador lidero un equipo de 2 personas: definí estándares de trabajo y un seguimiento claro de prioridades.</p></div>
+          <div class="block"><span class="k">Resultado</span><p>Prioridades ordenadas y entregas más previsibles para el equipo.</p></div>
+          <div class="tags"><span class="tag">Liderazgo</span><span class="tag">Gestión</span><span class="tag">Procesos</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="eyebrow"><span class="mono">Capacidades</span></div>
+      <h2 class="title reveal">Skills &amp; herramientas</h2>
+      <div class="skills-grid">
+        <div class="skillset reveal">
+          <h4>// Gestión &amp; liderazgo</h4>
+          <div class="chips">
+            <span class="chip">Liderazgo de equipos</span>
+            <span class="chip">Gestión de proyectos</span>
+            <span class="chip">Metodologías ágiles · Scrum</span>
+            <span class="chip">Relevamiento de requerimientos</span>
+            <span class="chip">Casos de uso · Historias de usuario</span>
+            <span class="chip">Modelado de procesos (BPM)</span>
+            <span class="chip">Gestión de stakeholders</span>
+            <span class="chip">Análisis de datos · BI</span>
+          </div>
+        </div>
+        <div class="skillset reveal">
+          <h4>// IA &amp; automatización</h4>
+          <div class="chips">
+            <span class="chip">IA Generativa</span>
+            <span class="chip">LLMs · OpenAI / GPT</span>
+            <span class="chip">Ingeniería de prompts</span>
+            <span class="chip">Agentes de IA</span>
+            <span class="chip">Automatización · n8n</span>
+            <span class="chip">RAG · bases vectoriales</span>
+            <span class="chip">Model Context Protocol (MCP)</span>
+            <span class="chip">Asistentes conversacionales</span>
+          </div>
+        </div>
+        <div class="skillset reveal">
+          <h4>// Técnicas &amp; herramientas</h4>
+          <div class="chips">
+            <span class="chip">Administración de TI</span>
+            <span class="chip">Seguridad informática</span>
+            <span class="chip">Integración de APIs</span>
+            <span class="chip">SAP</span>
+            <span class="chip">Soporte técnico</span>
+            <span class="chip">Microsoft Office</span>
+            <span class="chip">Redes</span>
+            <span class="chip">SDLC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTS + EDU -->
+  <section id="edu">
+    <div class="wrap two">
+      <div>
+        <div class="eyebrow"><span class="mono">Formación continua</span></div>
+        <h2 class="title reveal">Certificaciones</h2>
+        <div class="reveal">
+          <div class="cert"><div class="mk">n8n</div><div><div class="name">Curso de n8n</div><div class="org">Platzi · 2025</div></div></div>
+          <div class="cert"><div class="mk">PM</div><div><div class="name">[Gestión de proyectos ágiles]</div><div class="org">[Institución · año]</div></div></div>
+          <div class="cert"><div class="mk">SEC</div><div><div class="name">[Seguridad informática]</div><div class="org">[Institución · año]</div></div></div>
+          <p class="cert-more">+ muchas más · <strong style="color:var(--text)">37 certificaciones en total</strong></p>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow"><span class="mono">Educación</span></div>
+        <h2 class="title reveal">Académico</h2>
+        <div class="edu-card reveal">
+          <div class="deg">Ingeniería en Computer Science</div>
+          <div class="inst">Universidad Nacional Experimental de los Llanos Centrales «Rómulo Gallegos»</div>
+          <div class="yr">2007 — 2013</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="eyebrow reveal" style="justify-content:center"><span class="mono">Hablemos</span></div>
+      <h2 class="reveal">¿Buscás alguien que ordene<br>la <span class="accent">complejidad técnica</span>?</h2>
+      <p class="lead reveal" style="margin:0 auto 30px">Estoy abierto a oportunidades como Coordinador / Líder de IT o Project Manager — presencial, híbrido o remoto.</p>
+      <div class="cta reveal">
+        <a class="btn primary" href="mailto:antoniojsanchezt@gmail.com">Escribime un mail</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/antoniojsanchezt" target="_blank" rel="noopener">Conectá en LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>© <span id="yr"></span> Antonio Sánchez</span>
+    <span class="mono">Buenos Aires · Argentina</span>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(Math.min(i,6)*60)+'ms'; io.observe(el); });
+  // active nav
+  const links=[...document.querySelectorAll('.nav-links a')];
+  const map=links.map(a=>document.querySelector(a.getAttribute('href')));
+  const navIo=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ const id='#'+e.target.id; links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id)); }});
+  },{rootMargin:"-45% 0px -50% 0px"});
+  map.forEach(s=>s&&navIo.observe(s));
+</script>
+</body>
+</html>
