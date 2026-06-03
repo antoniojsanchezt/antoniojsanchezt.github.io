@@ -94,6 +94,17 @@
   .stat .num{font-family:var(--font-display);font-weight:800;font-size:clamp(2.1rem,4vw,2.9rem);letter-spacing:-.02em;color:var(--accent);line-height:1}
   .stat .lbl{color:var(--muted);font-size:.86rem;margin-top:8px;max-width:22ch}
   @media(max-width:780px){.stats .wrap{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:none}}
+  .marquee{overflow:hidden;border-bottom:1px solid var(--line);background:rgba(255,255,255,.015);padding:16px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+  .marquee-track{display:flex;width:max-content;animation:scrollx 45s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee span{font-family:var(--font-mono);font-size:.84rem;color:var(--muted);white-space:nowrap;letter-spacing:.05em;display:inline-flex;align-items:center}
+  .marquee span::after{content:"◆";color:var(--accent);font-size:.5rem;margin:0 28px;opacity:.7}
+  @keyframes scrollx{to{transform:translateX(-50%)}}
+  .pillars{list-style:none;margin-top:30px;display:grid;gap:12px}
+  .pillars li{display:flex;align-items:center;gap:13px;color:var(--text);font-weight:500;font-size:.96rem;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);transition:border-color .25s,transform .25s}
+  .pillars li:hover{border-color:rgba(124,242,196,.35);transform:translateX(5px)}
+  .pillars svg{width:20px;height:20px;color:var(--accent);flex:0 0 auto}
+  @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
   .about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:50px}
   .about-grid p{margin-bottom:16px;color:#cfd2da}
   .about-grid p:last-child{margin-bottom:0}
@@ -144,7 +155,9 @@
   .edu-card .yr{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);margin-top:14px}
   @media(max-width:880px){.two{grid-template-columns:1fr;gap:34px}}
   @media(max-width:480px){.cert-grid{grid-template-columns:1fr}}
-  .contact{text-align:center;padding:120px 0 96px}
+  .contact{text-align:center;padding:108px 0 96px;position:relative;overflow:hidden}
+  .contact::before{content:"⬡";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--font-display);font-size:min(44vw,600px);color:rgba(124,242,196,.035);z-index:0;pointer-events:none;line-height:1}
+  .contact .wrap{position:relative;z-index:1}
   .contact h2{font-family:var(--font-display);font-weight:800;font-size:clamp(2.2rem,5.4vw,3.7rem);letter-spacing:-.03em;line-height:1.03;margin:18px 0 22px}
   .contact h2 .accent{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
   .contact .lead{margin:0 auto 30px}
@@ -228,7 +241,14 @@
       <div class="stat"><div class="num" data-count="4" data-prefix="+">+4</div><div class="lbl" data-i18n="stat.l1">años en IT Business Partnering</div></div>
       <div class="stat"><div class="num">Jira</div><div class="lbl" data-i18n="stat.l2">proyecto estratégico multi-épica</div></div>
       <div class="stat"><div class="num" data-count="37">37</div><div class="lbl" data-i18n="stat.l3">certificaciones profesionales</div></div>
-      <div class="stat"><div class="num" data-count="2">2</div><div class="lbl" data-i18n="stat.l4">personas a cargo (equipo ITBP)</div></div>
+      <div class="stat"><div class="num">ES·EN</div><div class="lbl" data-i18n="stat.l4">perfil bilingüe (nativo)</div></div>
+    </div>
+  </div>
+
+  <!-- TECH MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Jira</span><span>Agile</span><span>Scrum</span><span>OpenAI / GPT</span><span>n8n</span><span>RAG</span><span>MCP</span><span>Python</span><span>REST APIs</span><span>SDLC</span><span>BPM</span><span>Cybersecurity</span><span>AI Agents</span><span>Prompt Engineering</span><span>Project Management</span><span>Leadership</span><span>Jira</span><span>Agile</span><span>Scrum</span><span>OpenAI / GPT</span><span>n8n</span><span>RAG</span><span>MCP</span><span>Python</span><span>REST APIs</span><span>SDLC</span><span>BPM</span><span>Cybersecurity</span><span>AI Agents</span><span>Prompt Engineering</span><span>Project Management</span><span>Leadership</span>
     </div>
   </div>
 
@@ -238,6 +258,12 @@
         <div>
           <p class="eyebrow"><span class="mono" data-i18n="about.eyebrow">Perfil</span></p>
           <h2 class="title reveal" data-i18n="about.title">El nexo entre<br>negocio y tecnología</h2>
+          <ul class="pillars reveal">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span data-i18n="pil.1">Liderazgo de equipos</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span data-i18n="pil.2">Gestión de proyectos (Jira)</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg><span data-i18n="pil.3">IA &amp; automatización</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg><span data-i18n="pil.4">Mejora de procesos</span></li>
+          </ul>
         </div>
         <div class="reveal">
           <p data-i18n="about.p1">Coordino el equipo de <strong>IT Business Partners</strong> en Social Learning, liderando la relación entre las áreas de negocio y los equipos técnicos para que la tecnología impulse resultados concretos.</p>
@@ -469,8 +495,8 @@
     "hero.sub":"Software project management, Agile methodologies, and AI automation. I bridge the technical and the strategic.",
     "hero.cta1":"Email me",
     "spec.title":"// Quick facts","spec.k.loc":"Location","spec.k.mode":"Work mode","spec.v.mode":"On-site · Hybrid · Remote","spec.k.focus":"Focus","spec.v.focus":"IT Leadership · Projects","spec.k.method":"Methodologies","spec.k.lang":"Languages","spec.v.lang":"Spanish · English","spec.k.status":"Status","spec.v.status":"Available",
-    "stat.l1":"years in IT Business Partnering","stat.l2":"strategic multi-epic project","stat.l3":"professional certifications","stat.l4":"people managed (ITBP team)",
-    "about.eyebrow":"About","about.title":"The bridge between<br>business and technology",
+    "stat.l1":"years in IT Business Partnering","stat.l2":"strategic multi-epic project","stat.l3":"professional certifications","stat.l4":"native bilingual profile",
+    "about.eyebrow":"About","about.title":"The bridge between<br>business and technology","pil.1":"Team leadership","pil.2":"Project management (Jira)","pil.3":"AI &amp; automation","pil.4":"Process improvement",
     "about.p1":"I coordinate the <strong>IT Business Partners</strong> team at Social Learning, leading the relationship between business areas and technical teams so technology drives real results.",
     "about.p2":"Over more than <strong>4 years</strong> at the company, I grew from IT Business Partner to coordinating the team. I manage software projects end to end —from capturing the business need and translating it into requirements (use cases, user stories) through to user adoption— working with <strong>Jira and Agile methodologies</strong>.",
     "about.p3":"In parallel, I apply <strong>AI and automation</strong> to solve real problems: conversational agents, n8n workflows, and tool integration. I like bringing cutting-edge technology down to concrete processes.",
