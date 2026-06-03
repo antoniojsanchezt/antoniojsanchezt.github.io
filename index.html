@@ -87,6 +87,10 @@
   .spec dt{color:var(--muted);font-size:.86rem}
   .spec dd{text-align:right;font-weight:600;font-size:.9rem}
   @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:38px}.spec{order:2}}
+  .hero-right{display:flex;flex-direction:column}
+  .portrait-wrap{position:relative;width:100%;max-width:320px;margin:0 auto 22px;aspect-ratio:1}
+  .portrait-wrap::before{content:"";position:absolute;inset:-3px;border-radius:24px;background:linear-gradient(140deg,var(--accent),var(--accent-2) 45%,transparent 75%);opacity:.55;z-index:0}
+  .portrait{position:relative;z-index:1;width:100%;height:100%;border-radius:21px;object-fit:cover;display:block;box-shadow:0 30px 60px -30px rgba(0,0,0,.85)}
   .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.015)}
   .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
   .stat{padding:40px 26px;border-right:1px solid var(--line)}
@@ -222,7 +226,9 @@
           </a>
         </div>
       </div>
-      <aside class="spec reveal" aria-label="Quick facts">
+      <div class="hero-right reveal">
+      <div class="portrait-wrap"><img class="portrait" src="profile.jpg" alt="Antonio Sánchez" width="320" height="320" /></div>
+      <aside class="spec" aria-label="Quick facts">
         <h3 data-i18n="spec.title">// Ficha rápida</h3>
         <dl>
           <div class="row"><dt data-i18n="spec.k.loc">Ubicación</dt><dd>Buenos Aires, AR</dd></div>
@@ -233,6 +239,7 @@
           <div class="row"><dt data-i18n="spec.k.status">Estado</dt><dd style="color:var(--accent)" data-i18n="spec.v.status">Disponible</dd></div>
         </dl>
       </aside>
+      </div>
     </div>
   </section>
 
